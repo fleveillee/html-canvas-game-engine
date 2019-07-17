@@ -1,0 +1,16 @@
+{
+  "name": "@spibo-studio/canvas-test",
+  "version": "0.1.0",
+  "description": "HTML Canvass game test",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpileOnly ./app/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frédéric Léveillée",
+  "dependencies": {},
+  "devDependencies": {
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  }
+}
