@@ -1,11 +1,15 @@
+import {Canvas, Character} from '../../spibo-studio/src/app';
+
 window.onload = function () {
 
-    const canvas = new Canvas();
+    const canvas = new Canvas(640, 480);
     const gb = document.getElementById('game-board');
-    const gbc = gb.getContext('2d');
+    // const gbc = gb.getContext('2d');
 
-    const character = new Character(0, 0, 80, 120, 10);
-    character.setSprites('edgar-sprites');
+    const img = document.getElementById('edgar-sprites');
+    const character = new Character(img, 320, 220, 120);
+
+    canvas.addCharacter(character);
     character.draw(gbc);
 
     document.addEventListener('keydown', (event) => move(event, gb, gbc, character));
