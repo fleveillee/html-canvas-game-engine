@@ -4,10 +4,20 @@
   "description": "HTML Canvass game test",
   "main": "dist/app.js",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpileOnly ./app/app.ts",
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./app/app.ts",
+    "start": "tsc && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fleveillee/canvas-test.git"
+  },
   "author": "Frédéric Léveillée",
+  "bugs": {
+    "url": "https://github.com/fleveillee/canvas-test/issues"
+  },
+  "homepage": "https://github.com/fleveillee/canvas-test#readme",
   "dependencies": {},
   "devDependencies": {
     "tslint": "^5.18.0",
