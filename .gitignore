@@ -86,3 +86,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+#IntelliJ
+.idea
+
+# OSX
+.DS_Store
