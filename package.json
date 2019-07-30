@@ -1,13 +1,23 @@
 {
   "name": "@spibo-studio/canvas-test",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "HTML Canvass game test",
-  "main": "dist/app.js",
+  "main": "dist/game.js",
+  "types": "dist/game.d.ts",
+  "files": [
+    "public/**/*"
+  ],
   "scripts": {
-    "build": "tsc",
-    "dev": "ts-node-dev --respawn --transpileOnly ./app/app.ts",
-    "start": "tsc && node dist/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -R ./public/js/* || true && tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/game.ts",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -18,9 +28,18 @@
     "url": "https://github.com/fleveillee/canvas-test/issues"
   },
   "homepage": "https://github.com/fleveillee/canvas-test#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@spibo-studio/spibo-studio": "0.0.12",
+    "systemjs": "^4.1.0"
+  },
   "devDependencies": {
-    "tslint": "^5.18.0",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "prettier": "^1.18.2",
     "typescript": "^3.5.3"
   }
 }
