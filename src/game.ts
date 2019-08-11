@@ -1,17 +1,28 @@
 // import {Background, Canvas, Character, Sprite} from '@spibo-studio/spibo-studio';
-import { Background, Canvas, Character, Sprite } from '../../spibo-studio/src/spibo-studio';
+import {
+  Background,
+  Canvas,
+  Character,
+  CanvasPosition,
+  CanvasRectangle,
+  CanvasImageSprite,
+  CanvasImageSpritePosition,
+} from '../../spibo-studio/src/spibo-studio';
 
-document.addEventListener('DOMContentLoaded', function(): void {
-  const canvas = new Canvas(640, 480);
+document.addEventListener('DOMContentLoaded', function (): void {
+  const canvas = new Canvas(640, 650);
 
-  canvas.background = new Background('images/backgrounds/bg-forest-2.jpg', 1300, 650, true);
+  const background = new Background('images/backgrounds/bg-forest-2.jpg', 1300, 650, true, new CanvasPosition(0, 0));
+  background.restrictedZones.push(new CanvasRectangle(background.width, 560, new CanvasPosition(0, 0)));
+  background.restrictedZones.push(new CanvasRectangle(background.width, 200, new CanvasPosition(0, 585)));
+  canvas.background = background;
 
   const edgar = new Character('images/characters/edgar.gif', 355, 140, 50);
-  edgar.yPos = 300;
-  edgar.sprites.push(new Sprite('movingUp', 95, 10, 80, 120));
-  edgar.sprites.push(new Sprite('movingDown', 10, 10, 80, 120));
-  edgar.sprites.push(new Sprite('movingLeft', 265, 10, 80, 120));
-  edgar.sprites.push(new Sprite('movingRight', 180, 10, 80, 120));
+  edgar.pos = new CanvasPosition(20, 450);
+  edgar.sprites.push(new CanvasImageSprite('movingUp', 80, 120, new CanvasImageSpritePosition(95, 10)));
+  edgar.sprites.push(new CanvasImageSprite('movingDown', 80, 120, new CanvasImageSpritePosition(10, 10)));
+  edgar.sprites.push(new CanvasImageSprite('movingLeft', 80, 120, new CanvasImageSpritePosition(265, 10)));
+  edgar.sprites.push(new CanvasImageSprite('movingRight', 80, 120, new CanvasImageSpritePosition(180, 10)));
   edgar.setActiveSprite('movingDown');
   canvas.mainCharacter = edgar;
 });
