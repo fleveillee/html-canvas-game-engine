@@ -1,4 +1,3 @@
-// import {Background, Canvas, Character, Sprite} from '@spibo-studio/spibo-studio';
 import {
   Background,
   BackgroundPosition,
@@ -8,7 +7,8 @@ import {
   CanvasImageSprite,
   CanvasImageSpritePosition,
   Character,
-} from '../../spibo-studio/src/spibo-studio';
+} from '@spibo-studio/spibo-studio';
+//from '../../spibo-studio/src/spibo-studio';
 
 document.addEventListener('DOMContentLoaded', function(): void {
   const canvas = new Canvas(640, 650);
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(): void {
   background.restrictedZones.push(new CanvasRectangle(background.width, 200, new BackgroundPosition(0, 585)));
   canvas.background = background;
 
-  const edgar = new Character('images/characters/edgar.gif', 355, 140, 50);
+  const edgar = new Character('images/characters/edgar.gif', 355, 140, 100);
   edgar.pos = new CanvasPosition(20, 450);
   edgar.sprites.push(new CanvasImageSprite('movingUp', 80, 120, new CanvasImageSpritePosition(95, 10)));
   edgar.sprites.push(new CanvasImageSprite('movingDown', 80, 120, new CanvasImageSpritePosition(10, 10)));
