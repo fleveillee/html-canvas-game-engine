@@ -1,11 +1,16 @@
 // import {Background, Canvas, Character, Sprite} from '@spibo-studio/spibo-studio';
 import {
-  Background, BackgroundPosition,
-  Canvas, CanvasPosition, CanvasRectangle, CanvasImageSprite, CanvasImageSpritePosition,
+  Background,
+  BackgroundPosition,
+  Canvas,
+  CanvasPosition,
+  CanvasRectangle,
+  CanvasImageSprite,
+  CanvasImageSpritePosition,
   Character,
 } from '../../spibo-studio/src/spibo-studio';
 
-document.addEventListener('DOMContentLoaded', function (): void {
+document.addEventListener('DOMContentLoaded', function(): void {
   const canvas = new Canvas(640, 650);
 
   const background = new Background('images/backgrounds/bg-forest-2.jpg', 1300, 650, true, new CanvasPosition(0, 0));
