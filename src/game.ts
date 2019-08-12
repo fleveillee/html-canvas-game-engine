@@ -1,20 +1,16 @@
 // import {Background, Canvas, Character, Sprite} from '@spibo-studio/spibo-studio';
 import {
-  Background,
-  Canvas,
+  Background, BackgroundPosition,
+  Canvas, CanvasPosition, CanvasRectangle, CanvasImageSprite, CanvasImageSpritePosition,
   Character,
-  CanvasPosition,
-  CanvasRectangle,
-  CanvasImageSprite,
-  CanvasImageSpritePosition,
 } from '../../spibo-studio/src/spibo-studio';
 
 document.addEventListener('DOMContentLoaded', function (): void {
   const canvas = new Canvas(640, 650);
 
   const background = new Background('images/backgrounds/bg-forest-2.jpg', 1300, 650, true, new CanvasPosition(0, 0));
-  background.restrictedZones.push(new CanvasRectangle(background.width, 560, new CanvasPosition(0, 0)));
-  background.restrictedZones.push(new CanvasRectangle(background.width, 200, new CanvasPosition(0, 585)));
+  background.restrictedZones.push(new CanvasRectangle(background.width, 560, new BackgroundPosition(0, 0)));
+  background.restrictedZones.push(new CanvasRectangle(background.width, 200, new BackgroundPosition(0, 585)));
   canvas.background = background;
 
   const edgar = new Character('images/characters/edgar.gif', 355, 140, 50);
