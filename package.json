@@ -1,6 +1,6 @@
 {
   "name": "@spibo-studio/canvas-test",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "HTML Canvass game test",
   "main": "dist/game.js",
   "types": "dist/game.d.ts",
@@ -17,7 +17,8 @@
     "preversion": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "surge": "surge public --domain spibo.surge.sh"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,7 @@
   },
   "homepage": "https://github.com/fleveillee/canvas-test#readme",
   "dependencies": {
-    "@spibo-studio/spibo-studio": "0.0.2"
+    "@spibo-studio/spibo-studio": "0.0.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.13.0",
