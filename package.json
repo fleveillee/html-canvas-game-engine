@@ -33,19 +33,19 @@
     "@spibo-studio/spibo-studio": "0.0.3"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "browserify": "^16.3.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-config-prettier": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^2",
+    "@typescript-eslint/parser": "^2",
+    "browserify": "^16.5.0",
+    "eslint": "^6",
+    "eslint-config-airbnb-base": "^14",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "exorcist": "^1.0.1",
-    "prettier": "^1.18.2",
-    "tinyify": "^2.5.1",
+    "prettier": "^1.19.1",
+    "tinyify": "^2.5.2",
     "tsify": "^4.0.1",
-    "typescript": "^3.5.3",
+    "typescript": "^3.7.2",
     "watchify": "^3.11.1"
   }
 }
