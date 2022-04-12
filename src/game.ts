@@ -8,7 +8,7 @@ import {
   CanvasImageSprite,
   CanvasImageSpritePosition,
   Character,
-} from '@spibo-studio/spibo-studio'; //'../../spibo-studio/src/spibo-studio';
+} from '@spibo-studio/spibo-studio'; // '../../spibo-studio/src/spibo-studio';
 
 function getEdgar(): Character {
   const edgar = new Character('images/characters/edgar.gif', 355, 140, 100);
@@ -36,8 +36,9 @@ function drawBg2(canvas: Canvas): void {
   canvas.mainCharacter = edgar;
 }
 
-function drawBg1(canvas: Canvas, origin: string = 'left'): void {
-  let bgPosition, edgarPosition;
+function drawBg1(canvas: Canvas, origin = 'left'): void {
+  let bgPosition;
+  let edgarPosition;
   const edgar = canvas.mainCharacter ? canvas.mainCharacter : getEdgar();
 
   if (origin === 'left') {
@@ -62,7 +63,7 @@ function drawBg1(canvas: Canvas, origin: string = 'left'): void {
   canvas.mainCharacter = edgar;
 }
 
-document.addEventListener('DOMContentLoaded', function(): void {
+document.addEventListener('DOMContentLoaded', (): void => {
   const canvas = new Canvas(1000, 650, 20, new Boundaries(20, 980, 630, 20));
   drawBg1(canvas);
 });
