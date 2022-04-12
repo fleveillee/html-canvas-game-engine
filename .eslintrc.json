@@ -9,7 +9,6 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier"
-
   ],
   "globals": {
     "Atomics": "readonly",
@@ -30,10 +29,25 @@
     "prettier"
   ],
   "rules": {
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "ts": "never"
+      }
+    ],
     "no-console": 0,
     "prettier/prettier": "error",
+    "no-param-reassign": "off",
     "no-underscore-dangle": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-inferrable-types": [
+      2,
+      {
+        "ignoreParameters": true,
+        "ignoreProperties": true
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
@@ -46,5 +60,8 @@
         ]
       }
     }
-  }
+  },
+  "ignorePatterns": [
+    "public/js/**"
+  ]
 }
