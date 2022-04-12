@@ -64,6 +64,6 @@ function drawBg1(canvas: Canvas, origin = 'left'): void {
 }
 
 document.addEventListener('DOMContentLoaded', (): void => {
-  const canvas = new Canvas(1000, 650, 20, new Boundaries(20, 980, 630, 20));
+  const canvas = new Canvas(1000, 650, new Boundaries(20, 980, 630, 20), 20);
   drawBg1(canvas);
 });
