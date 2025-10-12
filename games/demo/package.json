@@ -18,7 +18,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
-    "surge": "surge public --domain spibo.surge.sh"
+    "upload": "surge public --domain spibo.surge.sh"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,8 @@
   },
   "homepage": "https://github.com/fleveillee/canvas-test#readme",
   "dependencies": {
-    "@spibo-studio/spibo-studio": "^0.0.14"
+    "@spibo-studio/spibo-studio": "^0.0.14",
+    "surge": "^0.24.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",
@@ -40,8 +41,6 @@
     "eslint": "^9.37.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-prettier": "^5.5.4",
     "exorcist": "^2.0.0",
     "prettier": "^3.6.2",
     "tinyify": "^4.0.0",
