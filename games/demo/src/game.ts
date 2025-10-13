@@ -13,27 +13,15 @@ import {
 function getEdgar(): Character {
   const edgar = new Character('images/characters/edgar.gif', 355, 140, 100);
 
-  edgar.sprites.push(new CanvasImageSprite('movingUp', 80, 120, new CanvasImageSpritePosition(95, 10)));
-  edgar.sprites.push(new CanvasImageSprite('movingDown', 80, 120, new CanvasImageSpritePosition(10, 10)));
-  edgar.sprites.push(new CanvasImageSprite('movingLeft', 80, 120, new CanvasImageSpritePosition(265, 10)));
-  edgar.sprites.push(new CanvasImageSprite('movingRight', 80, 120, new CanvasImageSpritePosition(180, 10)));
+  edgar.sprites.push(
+    new CanvasImageSprite('movingUp', 80, 120, new CanvasImageSpritePosition(95, 10)),
+    new CanvasImageSprite('movingDown', 80, 120, new CanvasImageSpritePosition(10, 10)),
+    new CanvasImageSprite('movingLeft', 80, 120, new CanvasImageSpritePosition(265, 10)),
+    new CanvasImageSprite('movingRight', 80, 120, new CanvasImageSpritePosition(180, 10)),
+  );
   edgar.setActiveSprite('movingDown');
 
   return edgar;
-}
-
-function drawBg2(canvas: Canvas): void {
-  const background = new Background('images/backgrounds/bg-forest-1.jpg', 1300, 650, true, new CanvasPosition(0, 0));
-  background.restrictedZones.push(new CanvasRectangle(background.width, 570, new BackgroundPosition(0, 0)));
-  background.restrictedZones.push(new CanvasRectangle(background.width, 200, new BackgroundPosition(0, 585)));
-  background.gateways.push(
-    new CanvasRectangle(10, 100, new BackgroundPosition(20, 550), (): void => drawBg1(canvas, 'right')),
-  );
-  canvas.background = background;
-
-  const edgar = canvas.mainCharacter ? canvas.mainCharacter : getEdgar();
-  edgar.pos = new CanvasPosition(30, 450);
-  canvas.mainCharacter = edgar;
 }
 
 function drawBg1(canvas: Canvas, origin = 'left'): void {
@@ -51,8 +39,10 @@ function drawBg1(canvas: Canvas, origin = 'left'): void {
   }
 
   const background = new Background('images/backgrounds/bg-forest-2.jpg', 1300, 650, true, bgPosition);
-  background.restrictedZones.push(new CanvasRectangle(background.width, 560, new BackgroundPosition(0, 0)));
-  background.restrictedZones.push(new CanvasRectangle(background.width, 200, new BackgroundPosition(0, 585)));
+  background.restrictedZones.push(
+    new CanvasRectangle(background.width, 560, new BackgroundPosition(0, 0)),
+    new CanvasRectangle(background.width, 200, new BackgroundPosition(0, 585)),
+  );
   background.gateways.push(
     new CanvasRectangle(10, 100, new BackgroundPosition(1270, 500), (): void => drawBg2(canvas)),
   );
@@ -60,6 +50,21 @@ function drawBg1(canvas: Canvas, origin = 'left'): void {
   edgar.pos = edgarPosition;
 
   canvas.background = background;
+  canvas.mainCharacter = edgar;
+}
+function drawBg2(canvas: Canvas): void {
+  const background = new Background('images/backgrounds/bg-forest-1.jpg', 1300, 650, true, new CanvasPosition(0, 0));
+  background.restrictedZones.push(
+    new CanvasRectangle(background.width, 570, new BackgroundPosition(0, 0)),
+    new CanvasRectangle(background.width, 200, new BackgroundPosition(0, 585)),
+  );
+  background.gateways.push(
+    new CanvasRectangle(10, 100, new BackgroundPosition(20, 550), (): void => drawBg1(canvas, 'right')),
+  );
+  canvas.background = background;
+
+  const edgar = canvas.mainCharacter ? canvas.mainCharacter : getEdgar();
+  edgar.pos = new CanvasPosition(30, 450);
   canvas.mainCharacter = edgar;
 }
 
