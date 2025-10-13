@@ -16,6 +16,9 @@ export default [
         ecmaVersion: 2018,
         sourceType: 'module',
         project: './tsconfig.json',
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
       globals: {
         ...globals.browser,
@@ -33,7 +36,7 @@ export default [
       'no-useless-constructor': 'off',
       'prettier/prettier': 'error',
       '@typescript-eslint/no-inferrable-types': [
-        'error',
+        2,
         {
           ignoreParameters: true,
           ignoreProperties: true,
@@ -49,4 +52,7 @@ export default [
     },
   },
   eslintConfigPrettier,
+  {
+    ignores: ['dist/**'],
+  },
 ];
