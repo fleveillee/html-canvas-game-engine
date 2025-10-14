@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/fleveillee/canvas-test#readme",
   "dependencies": {
-    "@spibo-studio/spibo-studio": "file:../../packages/spibo-studio"
+    "@spibo-studio/spibo-studio": "*"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",
